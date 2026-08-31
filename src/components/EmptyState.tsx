@@ -7,6 +7,7 @@ interface ActionProps {
 
 interface EmptyStateProps {
   images?: string[];
+  singleImage?: string;
   icon?: React.ReactNode;
   title: string;
   description?: React.ReactNode;
@@ -15,6 +16,7 @@ interface EmptyStateProps {
 }
 
 export const EmptyState: React.FC<EmptyStateProps> = ({
+  singleImage,
   images,
   icon,
   title,
@@ -23,7 +25,15 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
   secondaryAction,
 }) => (
   <div className="flex flex-col items-center justify-center py-16 gap-4 text-center max-w-md mx-auto">
-    {images && images.length > 0 ? (
+    {singleImage ? (
+      <div className="flex justify-center mb-4">
+        <img
+          src={singleImage}
+          alt="Empty"
+          className="w-40 h-40 object-contain"
+        />
+      </div>
+    ) : images && images.length > 0 ? (
       <div className="flex justify-center -space-x-4 mb-2">
         {images.map((src, idx) => (
           <div
@@ -33,7 +43,7 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
             <img
               src={src}
               alt="avatar"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
             />
           </div>
         ))}

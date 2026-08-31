@@ -324,11 +324,7 @@ export const SummaryPage: React.FC = () => {
                     ? "Please select a start and end date above, then click Search to view your attendance history."
                     : "You don't have any attendance logs for this period."
                 }
-                images={[
-                  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                ]}
+                singleImage="/not-found.png"
               />
             </div>
           ) : (
@@ -339,11 +335,7 @@ export const SummaryPage: React.FC = () => {
                     <EmptyState
                       title="No Matches Found"
                       description="We couldn't find any logs matching your current status filter."
-                      images={[
-                        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                      ]}
+                      singleImage="/not-found.png"
                       secondaryAction={{
                         label: "Clear Filter",
                         onClick: () => setStatusFilter(null),
@@ -421,11 +413,7 @@ export const SummaryPage: React.FC = () => {
                     <EmptyState
                       title="No Matches Found"
                       description="We couldn't find any logs matching your current status filter."
-                      images={[
-                        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                      ]}
+                      singleImage="/not-found.png"
                       secondaryAction={{
                         label: "Clear Filter",
                         onClick: () => setStatusFilter(null),

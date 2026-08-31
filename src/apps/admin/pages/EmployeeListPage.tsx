@@ -645,9 +645,9 @@ export const EmployeeListPage: React.FC = () => {
                           : "You haven't added any employees to the system yet."
                   }
                   images={[
-                    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
+                    "/not-found-employee-2.jpg",
+                    "/not-found-employee.jpg",
+                    "/not-found-employee-3.jpg",
                   ]}
                   secondaryAction={
                     activeFilterCount > 0 || appliedFilters.name
@@ -686,8 +686,9 @@ export const EmployeeListPage: React.FC = () => {
                       : "There are no employees to display here."
                   }
                   images={[
-                    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
+                    "/not-found-employee-2.jpg",
+                    "/not-found-employee.jpg",
+                    "/not-found-employee-3.jpg",
                   ]}
                 />
               </div>

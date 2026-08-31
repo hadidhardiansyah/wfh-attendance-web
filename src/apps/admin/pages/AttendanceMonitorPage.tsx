@@ -1,4 +1,4 @@
-import { useDebounce } from '../../../hooks/useDebounce';
+import { useDebounce } from "../../../hooks/useDebounce";
 import React, { useEffect, useState } from "react";
 import { adminService } from "../../../services";
 import type { Attendance } from "../../../types";
@@ -21,7 +21,10 @@ export const AttendanceMonitorPage: React.FC = () => {
   const debouncedSearch = useDebounce(searchInput, 500);
 
   useEffect(() => {
-    if (debouncedSearch.trim().length >= 3 || debouncedSearch.trim().length === 0) {
+    if (
+      debouncedSearch.trim().length >= 3 ||
+      debouncedSearch.trim().length === 0
+    ) {
       setSearch(debouncedSearch.trim());
     }
   }, [debouncedSearch]);
@@ -294,11 +297,7 @@ export const AttendanceMonitorPage: React.FC = () => {
                     ? "We couldn't find any records matching your search."
                     : "There are no attendance records for this period."
                 }
-                images={[
-                  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                ]}
+                singleImage="/not-found.png"
                 secondaryAction={
                   search.trim() !== ""
                     ? {
@@ -387,11 +386,7 @@ export const AttendanceMonitorPage: React.FC = () => {
                     <EmptyState
                       title="No Matches Found"
                       description="We couldn't find any logs matching your current search or status filter."
-                      images={[
-                        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop",
-                      ]}
+                      singleImage="/not-found.png"
                       secondaryAction={{
                         label: "Clear Filters",
                         onClick: () => {

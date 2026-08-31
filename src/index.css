@@ -1,0 +1,91 @@
+﻿@import "tailwindcss";
+
+@theme {
+  --color-dark: #1F2329;
+  --color-dark-800: #252b33;
+  --color-dark-700: #2c333d;
+  --color-dark-600: #343c47;
+  --color-dark-500: #3f4856;
+  --color-lime: #B6FF2E;
+  --color-lime-dim: #9de020;
+  --color-lime-glow: rgba(182, 255, 46, 0.15);
+  --color-surface: #252b33;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.6);
+  --color-text-muted: rgba(255, 255, 255, 0.35);
+  --font-sans: "Plus Jakarta Sans", "system-ui", sans-serif;
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #F8FAFC;
+    color: #1E293B;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #0038FF; }
+
+  ::selection { background: rgba(0, 56, 255, 0.2); color: #0038FF; }
+}
+
+@layer components {
+  /* Legacy classes cleared, handled via Tailwind Utilities directly in components */
+}
+
+@layer utilities {
+  .animate-pulse-lime {
+    animation: pulse-lime 2s infinite;
+  }
+  @keyframes pulse-lime {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(182, 255, 46, 0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(182, 255, 46, 0); }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.3s ease forwards;
+  }
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-slide-up-bottom {
+    animation: slide-up-bottom 0.3s ease forwards;
+  }
+  @keyframes slide-up-bottom {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.25s ease forwards;
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 1rem);
+  }
+}
+
+
+/* Prevent layout shift when scrollbar appears */
+html {
+  scrollbar-gutter: stable;
+}

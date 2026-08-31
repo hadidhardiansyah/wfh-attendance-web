@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "rules": {
+    "no-unused-vars": "off",
+    "react/react-in-jsx-scope": "off",
+    
+    "react-hooks/rules-of-hooks": "off",
+    "react/jsx-no-undef": "off",
+    "react/no-unescaped-entities": "off",
+    "react/no-unknown-property": "off",
+    "react/display-name": "off",
+    
+  }
+}
